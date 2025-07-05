@@ -1,0 +1,86 @@
+/* src/sections/ContactSection/ContactSection.module.css */
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+.contactForm .formGroup {
+    margin-bottom: 20px;
+}
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--text-color);
+    font-family: var(--font-main);
+}
+.contactForm input:focus,
+.contactForm textarea:focus {
+    outline: none;
+    border-color: #0ea5e9;
+}
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+}
+.mapPlaceholder {
+    flex-grow: 1;
+    /* Adres URL mapy został zakomentowany, ponieważ jest to statyczny obrazek z API mapboxa. */
+    /* W prawdziwej aplikacji użyłbyś React componentu dla mapy (np. react-google-maps) */
+    /* background: url('https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/-74.0060,40.7128,13,0/600x400?access_token=pk.eyJ1IjoiZXhhbXVsZXMiLCJhIjoiY2p0MG01MXRqMW45cjQzb2R6b2ptc3J4MSJ9.kU-B153m_a4I--pA9Y_A3A') center/cover; */
+    background: var(--glass-bg); /* Używamy glass-bg, jeśli nie ma mapy */
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    min-height: 250px;
+}
+.socialLinks {
+    margin-top: 20px;
+}
+.socialLinks a {
+    color: var(--text-color-darker);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+.socialLinks a:hover {
+    color: #fff;
+}
+
+/* Re-import globalnych stylów, które są wspólne */
+.glassPanel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--blur-value));
+    -webkit-backdrop-filter: blur(var(--blur-value));
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.ctaButton {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    background: var(--accent-gradient);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: none;
+}
+.ctaButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+    .contactGrid { grid-template-columns: 1fr; }
+    .mapPlaceholder { margin-top: 40px;}
+}

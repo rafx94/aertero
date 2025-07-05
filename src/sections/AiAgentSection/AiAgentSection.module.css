@@ -1,0 +1,62 @@
+.chatSection {
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  backdrop-filter: blur(8px);
+}
+
+.chatContainer {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 100%;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.chatTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00ffff;
+  text-align: center;
+}
+
+.chatInput {
+  width: 100%;
+  min-height: 100px;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  background-color: #000000cc;
+  color: white;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+.chatButton {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.chatButton:hover {
+  background-color: #1e40af;
+}
+
+.chatResponse {
+  margin-top: 1.5rem;
+  white-space: pre-wrap;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #00ffff;
+}

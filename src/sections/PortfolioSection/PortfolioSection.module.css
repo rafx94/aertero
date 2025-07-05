@@ -1,0 +1,136 @@
+.portfolioSection {
+    position: relative;
+    min-height: 400vh;
+    background: #0a0a0a;
+}
+
+.header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+    backdrop-filter: blur(40px);
+}
+
+.cardsWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stickyCardContainer {
+    position: sticky;
+    top: 96px;
+    height: calc(100vh - 96px - 32px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolioCard {
+  display: flex;
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  height: 420px;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(30px);
+  overflow: visible;
+  transition: box-shadow 0.3s ease;
+}
+
+.portfolioCard:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.35),
+              0 0 60px rgba(0, 255, 255, 0.2),
+              0 0 90px rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.4);
+}
+
+.cardImageWrapper {
+  flex: 1;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-40px); /* Wychodzi poza kartę */
+  z-index: 1;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  max-height: 580px;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cardContent {
+  flex: 2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.cardContent h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cardContent p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+  max-width: 480px;
+}
+
+.ctaButton {
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 1px solid #00ffff;
+  border-radius: 999px;
+  color: #00ffff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #00ffff;
+  color: #0a0a0a;
+}
+.fadeInUp {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fadeInUp.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.sectionEnter {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.sectionEnter.show {
+  opacity: 1;
+  transform: translateY(0);
+}

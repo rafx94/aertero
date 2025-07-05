@@ -1,0 +1,78 @@
+/* src/sections/FaqSection/FaqSection.module.css */
+
+.faqContainer {
+    width: 100%;
+    max-width: 800px;
+    height: 60vh; /* Fixed height for chat window */
+    display: flex; /* Flex, aby panel szkła był aktywny i poprawnie w środku */
+    flex-direction: column;
+}
+.chatWindow {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.chatMessages {
+    flex-grow: 1; /* Pozwala na zajęcie dostępnej przestrzeni */
+    padding: 20px;
+    overflow-y: auto; /* Włącz przewijanie w pionie */
+    display: flex; /* Aby bąbelki były obok siebie */
+    flex-direction: column; /* Aby bąbelki były pod sobą */
+}
+.chatBubble {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+.chatBubble.received {
+    background: #2a2a2e;
+    border-bottom-left-radius: 5px;
+    align-self: flex-start; /* Wyśrodkowanie lewej strony */
+}
+.chatBubble.sent {
+    background-image: var(--accent-gradient);
+    color: #fff;
+    border-bottom-right-radius: 5px;
+    align-self: flex-end; /* Wyśrodkowanie prawej strony */
+    margin-left: auto; /* Push to the right */
+}
+.chatInput {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid var(--glass-border);
+}
+.chatInput input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 10px;
+    font-size: 1rem;
+}
+.chatInput input:focus {
+    outline: none;
+}
+.chatInput button {
+    background: transparent;
+    border: none;
+    color: #0ea5e9;
+    font-size: 1.5rem;
+    cursor: none; /* Controlled by CustomCursor */
+    padding: 0 10px; /* Adjust button padding */
+}
+
+/* Re-import globalnych stylów, które są wspólne */
+.glassPanel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--blur-value));
+    -webkit-backdrop-filter: blur(var(--blur-value));
+    border-radius: 24px;
+    padding: 40px; /* Domyślny padding dla glass-panel */
+}
+/* FAQ container ma już padding zdefiniowany w HTML, więc dostosuj */
+.faqContainer.glassPanel {
+    padding: 0; /* Usuń domyślny padding glassPanel, bo chat-window ma swój */
+}

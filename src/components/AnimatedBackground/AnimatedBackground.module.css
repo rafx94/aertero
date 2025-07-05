@@ -1,0 +1,31 @@
+/* src/components/AnimatedBackground/AnimatedBackground.module.css */
+.animatedBgContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    /* Konfiguracja dla sceny 3D */
+    perspective: 1000px;
+
+    /* Tło mgławicy - upewnij się, że obrazek jest w /public */
+    background-image: url('/public/assets/nebula-2.png');
+    background-size: 110% 110%; /* Lekkie powiększenie, aby zapobiec pustym krawędziom przy obrocie */
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Dodajemy will-change dla optymalizacji animacji transform */
+    will-change: transform;
+}
+
+.particlesCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Interakcja myszy nie jest potrzebna, bo canvas reaguje na globalną pozycję myszy */
+    pointer-events: none;
+}
